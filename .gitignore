@@ -3,3 +3,7 @@ build/
 
 # ignore vscode settings
 .vscode/
+
+# ignore icx_acc.sh
+**/icx_acc.sh
+!/icx_acc.sh
