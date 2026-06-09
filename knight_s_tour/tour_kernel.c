@@ -136,6 +136,7 @@ void traverse_kernel(int i, int j, int print_board_open)
     
     while (!isEmptyStack() && !isFullStack())
     {
+        steps_taken ++;
         popStack(cur_pos, cur_visited);
         if (cur_visited != (BoardType)0)
         {
@@ -162,12 +163,13 @@ void traverse_kernel(int i, int j, int print_board_open)
 
             BoardType next_visited = ~board & next_step_array[next_pos];
             pushStack(next_pos, next_visited);
-            steps_taken ++;
+            
             if(print_board_open) print_board();
         }
         else
         {
             board &= ~mask(cur_pos);
+            if(print_board_open) print_board();
         }
     }
 
