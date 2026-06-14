@@ -19,7 +19,7 @@ BoardType next_step_array[64];
 typedef struct
 {
     ScaleType pos;      // i << 3 + j
-    BoardType visited;  // initialized as 0
+    BoardType unvisited;  // initialized as 0
 }
 StackType;              // 128 bits
 
@@ -30,8 +30,8 @@ int top;
 #define initialStack() (top = 0)
 #define isEmptyStack() (top == 0)
 #define pushStack(x, y) (Stack[top++] = (StackType){(x), (y)})
-// #define peekStack(x, y) ((x) = Stack[top - 1].pos, (y) = Stack[top - 1].visited)
-#define popStack(x, y) (top--, (x) = Stack[top].pos, (y) = Stack[top].visited)
+// #define peekStack(x, y) ((x) = Stack[top - 1].pos, (y) = Stack[top - 1].unvisited)
+#define popStack(x, y) (top--, (x) = Stack[top].pos, (y) = Stack[top].unvisited)
 #define isFullStack() (top == 64)
 
 int steps_taken;
@@ -127,9 +127,9 @@ void traverse_kernel(int i, int j, int print_board_open)
     mask_generate();
     ScaleType cur_pos = (ScaleType)i_j2pos_32(i, j);
     board = mask(cur_pos);                              // initial board
-    BoardType cur_visited = next_step_array[cur_pos];   //~board & next_step_array[cur_pos];
+    BoardType cur_unvisited = next_step_array[cur_pos];   //~board & next_step_array[cur_pos];
     initialStack();
-    pushStack(cur_pos, cur_visited);
+    pushStack(cur_pos, cur_unvisited);
     steps_taken = 1;
     
     if(print_board_open) print_board();
@@ -137,13 +137,13 @@ void traverse_kernel(int i, int j, int print_board_open)
     while (!isEmptyStack() && !isFullStack())
     {
         steps_taken ++;
-        popStack(cur_pos, cur_visited);
-        if (cur_visited != (BoardType)0)
+        popStack(cur_pos, cur_unvisited);
+        if (cur_unvisited != (BoardType)0)
         {
             board |= mask(cur_pos);
 
             ScaleType next_pos;
-            BoardType selecter = cur_visited;
+            BoardType selecter = cur_unvisited;
             int min_choice = 9;             // find the pos where have least choices
             while (selecter != 0)           // Warnsdorff
             {
@@ -158,11 +158,11 @@ void traverse_kernel(int i, int j, int print_board_open)
                 }
             }
 
-            cur_visited &= ~mask(next_pos);
-            pushStack(cur_pos, cur_visited);
+            cur_unvisited &= ~mask(next_pos);
+            pushStack(cur_pos, cur_unvisited);
 
-            BoardType next_visited = ~board & next_step_array[next_pos];
-            pushStack(next_pos, next_visited);
+            BoardType next_unvisited = ~board & next_step_array[next_pos];
+            pushStack(next_pos, next_unvisited);
             
             if(print_board_open) print_board();
         }

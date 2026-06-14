@@ -7,3 +7,6 @@ build/
 # ignore icx_acc.sh
 **/icx_acc.sh
 !/icx_acc.sh
+
+# reports
+**/report.md
