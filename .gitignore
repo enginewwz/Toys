@@ -10,3 +10,5 @@ build/
 
 # reports
 **/report.md
+
+knight_s_tour/verify_tour.c
