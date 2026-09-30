@@ -1,0 +1,400 @@
+Breakpoint 1 at 0x401000: file input-output.s, line 9.
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+
+Breakpoint 1, _start () at input-output.s:9
+9	    mov $0, %rax
+
+------------------- STEP -------------------
+=> 0x401000 <_start>:	mov    $0x0,%rax
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x0                 0
+rdx            0x0                 0
+rsi            0x0                 0
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401000            0x401000 <_start>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+10	    mov $0, %rdi
+
+------------------- STEP -------------------
+=> 0x401007 <_start+7>:	mov    $0x0,%rdi
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x0                 0
+rdx            0x0                 0
+rsi            0x0                 0
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401007            0x401007 <_start+7>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+11	    lea input_char(%rip), %rsi
+
+------------------- STEP -------------------
+=> 0x40100e <_start+14>:	lea    0xfeb(%rip),%rsi        # 0x402000
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x0                 0
+rdx            0x0                 0
+rsi            0x0                 0
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x40100e            0x40100e <_start+14>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+12	    mov $1, %rdx
+
+------------------- STEP -------------------
+=> 0x401015 <_start+21>:	mov    $0x1,%rdx
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x0                 0
+rdx            0x0                 0
+rsi            0x402000            4202496
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401015            0x401015 <_start+21>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+13	    syscall
+
+------------------- STEP -------------------
+=> 0x40101c <_start+28>:	syscall
+rax            0x0                 0
+rbx            0x0                 0
+rcx            0x0                 0
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x0                 0
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x40101c            0x40101c <_start+28>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+16	    mov $1, %rax
+
+------------------- STEP -------------------
+=> 0x40101e <_start+30>:	mov    $0x1,%rax
+rax            0x1                 1
+rbx            0x0                 0
+rcx            0x40101e            4198430
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x40101e            0x40101e <_start+30>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+17	    mov $1, %rdi
+
+------------------- STEP -------------------
+=> 0x401025 <_start+37>:	mov    $0x1,%rdi
+rax            0x1                 1
+rbx            0x0                 0
+rcx            0x40101e            4198430
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401025            0x401025 <_start+37>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+18	    lea input_char(%rip), %rsi
+
+------------------- STEP -------------------
+=> 0x40102c <_start+44>:	lea    0xfcd(%rip),%rsi        # 0x402000
+rax            0x1                 1
+rbx            0x0                 0
+rcx            0x40101e            4198430
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x1                 1
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x40102c            0x40102c <_start+44>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+19	    mov $1, %rdx
+
+------------------- STEP -------------------
+=> 0x401033 <_start+51>:	mov    $0x1,%rdx
+rax            0x1                 1
+rbx            0x0                 0
+rcx            0x40101e            4198430
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x1                 1
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401033            0x401033 <_start+51>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+20	    syscall
+
+------------------- STEP -------------------
+=> 0x40103a <_start+58>:	syscall
+rax            0x1                 1
+rbx            0x0                 0
+rcx            0x40101e            4198430
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x1                 1
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x40103a            0x40103a <_start+58>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+22	    mov $60, %rax
+
+------------------- STEP -------------------
+=> 0x40103c <_start+60>:	mov    $0x3c,%rax
+rax            0x1                 1
+rbx            0x0                 0
+rcx            0x40103c            4198460
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x1                 1
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x40103c            0x40103c <_start+60>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+23	    xor %rdi, %rdi
+
+------------------- STEP -------------------
+=> 0x401043 <_start+67>:	xor    %rdi,%rdi
+rax            0x3c                60
+rbx            0x0                 0
+rcx            0x40103c            4198460
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x1                 1
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401043            0x401043 <_start+67>
+eflags         0x202               [ IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+24	    syscall
+
+------------------- STEP -------------------
+=> 0x401046 <_start+70>:	syscall
+rax            0x3c                60
+rbx            0x0                 0
+rcx            0x40103c            4198460
+rdx            0x1                 1
+rsi            0x402000            4202496
+rdi            0x0                 0
+rbp            0x0                 0x0
+rsp            0x7fffffffb4a0      0x7fffffffb4a0
+r8             0x0                 0
+r9             0x0                 0
+r10            0x0                 0
+r11            0x302               770
+r12            0x0                 0
+r13            0x0                 0
+r14            0x0                 0
+r15            0x0                 0
+rip            0x401046            0x401046 <_start+70>
+eflags         0x246               [ PF ZF IF ]
+cs             0x33                51
+ss             0x2b                43
+ds             0x0                 0
+es             0x0                 0
+fs             0x0                 0
+gs             0x0                 0
+fs_base        0x0                 0
+gs_base        0x0                 0
+[Inferior 1 (process 75734) exited normally]

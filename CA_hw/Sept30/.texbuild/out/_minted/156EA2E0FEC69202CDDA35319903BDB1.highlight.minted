@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nl}{main:}
+\PYG{+w}{    }\PYG{n+nf}{addi.d}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{32}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r1}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{24}\PYG{+w}{      }\PYG{c+c1}{\PYGZsh{} 保存 ra}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r22}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{16}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} 保存 fp}
+\PYG{+w}{    }\PYG{n+nf}{addi.d}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r22}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{32}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} fp = sp + 32}
+\end{MintedVerbatim}

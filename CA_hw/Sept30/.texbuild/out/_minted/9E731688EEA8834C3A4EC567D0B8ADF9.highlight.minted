@@ -1,0 +1,19 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nf}{la.local}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,.}\PYG{n+no}{LANCHOR0}\PYG{err}{+}\PYG{l+m+mi}{48}
+\PYG{+w}{    }\PYG{n+nf}{or}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r26}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r24}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{l+m+mi}{1000}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} 0x3e8}
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r25}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{l+m+mi}{96}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} 0x60}
+\PYG{n+nl}{.L2:}\PYG{+w}{                        }\PYG{c+c1}{\PYGZsh{} 循环展开，减少跳转，便于分支预测}
+\PYG{+w}{    }\PYG{n+nf}{bl}\PYG{+w}{  }\PYG{n+nv}{\PYGZpc{}plt}\PYG{p}{(}\PYG{n+no}{rand}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nf}{mod.w}\PYG{+w}{   }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r4}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r24}
+\PYG{+w}{    }\PYG{n+nf}{st.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{48}
+\PYG{+w}{    }\PYG{n+nf}{preld}\PYG{+w}{   }\PYG{l+m+mi}{8}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} 软件预取}
+\PYG{+w}{    }\PYG{n+nf}{bl}\PYG{+w}{  }\PYG{n+nv}{\PYGZpc{}plt}\PYG{p}{(}\PYG{n+no}{rand}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nf}{mod.w}\PYG{+w}{   }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r4}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r24}
+\PYG{+w}{    }\PYG{n+nf}{st.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{44}
+\PYG{+w}{    }\PYG{n+na}{...}\PYG{+w}{                     }\PYG{c+c1}{\PYGZsh{} 共 16 份，偏移 \PYGZhy{}48 到 +12}
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r26}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r26}\PYG{p}{,}\PYG{l+m+mi}{16}
+\PYG{+w}{    }\PYG{n+nf}{st.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{l+m+mi}{12}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} \PYGZhy{}48 \PYGZhy{} +12，一共 16 个一组}
+\PYG{+w}{    }\PYG{n+nf}{addi.d}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{l+m+mi}{64}
+\PYG{+w}{    }\PYG{n+nf}{bne}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r26}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r25}\PYG{p}{,.}\PYG{n+no}{L2}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} 循环 6 次}
+\end{MintedVerbatim}

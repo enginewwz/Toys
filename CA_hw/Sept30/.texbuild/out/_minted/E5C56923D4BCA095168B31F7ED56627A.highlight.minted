@@ -1,0 +1,19 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYGZsh{} trace.gdb
+set logging file trace\PYGZus{}log.txt
+set logging enabled on
+set pagination off
+
+b \PYGZus{}start
+r
+
+while (\PYGZdl{}\PYGZus{}thread != 0)
+    echo \PYGZbs{}n\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{} STEP \PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZhy{}\PYGZbs{}n
+    x/i \PYGZdl{}pc
+    info registers
+    stepi
+end
+
+set logging enabled off
+quit
+\end{MintedVerbatim}

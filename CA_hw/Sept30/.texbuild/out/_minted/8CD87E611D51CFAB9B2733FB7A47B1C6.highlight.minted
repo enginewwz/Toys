@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+na}{.section}\PYG{+w}{    }\PYG{n+no}{.text.startup}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}ax\PYGZdq{}}\PYG{p}{,}\PYG{n+na}{@progbits}
+\PYG{n+nl}{main:}
+\PYG{+w}{    }\PYG{n+nf}{addi.d}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{48}
+\PYG{+w}{    }\PYG{n+nf}{or}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r4}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} 调整顺序}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r1}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{40}
+\PYG{+w}{    }\PYG{n+na}{...}
+\end{MintedVerbatim}

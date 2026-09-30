@@ -1,0 +1,20 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r16}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{l+m+mi}{99}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} 0x63 \PYGZlt{}\PYGZhy{} 去掉第一轮减一的浪费（类似 do...while）}
+\PYG{+w}{    }\PYG{n+na}{.align}\PYG{+w}{  }\PYG{l+m+mi}{3}
+\PYG{n+nl}{.L6:}
+\PYG{+w}{    }\PYG{n+nf}{or}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r25}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}
+\PYG{+w}{    }\PYG{n+nf}{or}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}
+\PYG{+w}{    }\PYG{n+na}{.align}\PYG{+w}{  }\PYG{l+m+mi}{3}
+\PYG{n+nl}{.L4:}
+\PYG{+w}{    }\PYG{n+nf}{ldptr.w}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r14}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} load list[j], list[j + 1]}
+\PYG{+w}{    }\PYG{n+nf}{ldptr.w}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r15}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{4}
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,}\PYG{l+m+mi}{1}
+\PYG{+w}{    }\PYG{n+nf}{ble}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r14}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r15}\PYG{p}{,.}\PYG{n+no}{L3}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} 先比较和交换}
+\PYG{+w}{    }\PYG{n+nf}{stptr.w}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r15}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{0}
+\PYG{+w}{    }\PYG{n+nf}{st.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r14}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{4}
+\PYG{n+nl}{.L3:}
+\PYG{+w}{    }\PYG{n+nf}{addi.d}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{4}
+\PYG{+w}{    }\PYG{n+nf}{blt}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r16}\PYG{p}{,.}\PYG{n+no}{L4}\PYG{+w}{           }\PYG{c+c1}{\PYGZsh{} 内层循环}
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r16}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r16}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{1}
+\PYG{+w}{    }\PYG{n+nf}{bnez}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r16}\PYG{p}{,.}\PYG{n+no}{L6}\PYG{+w}{            }\PYG{c+c1}{\PYGZsh{} 外层循环}
+\end{MintedVerbatim}

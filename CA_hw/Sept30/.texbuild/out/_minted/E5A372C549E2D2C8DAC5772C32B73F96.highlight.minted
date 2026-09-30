@@ -1,0 +1,26 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+na}{.section}\PYG{+w}{ }\PYG{n+no}{.bss}
+\PYG{n+nl}{input\PYGZus{}char:}
+\PYG{+w}{    }\PYG{n+na}{.space}\PYG{+w}{ }\PYG{l+m+mi}{1}
+
+\PYG{n+na}{.section}\PYG{+w}{ }\PYG{n+no}{.text}
+\PYG{n+na}{.global}\PYG{+w}{ }\PYG{n+no}{\PYGZus{}start}
+\PYG{n+nl}{\PYGZus{}start:}
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} read from stdin}
+\PYG{+w}{    }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rax}
+\PYG{+w}{    }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}0}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rdi}
+\PYG{+w}{    }\PYG{n+nf}{lea}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}char}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}rip}\PYG{p}{),}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rsi}
+\PYG{+w}{    }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rdx}
+\PYG{+w}{    }\PYG{n+nf}{syscall}
+
+\PYG{+w}{    }\PYG{c+c1}{\PYGZsh{} write to stdout}
+\PYG{+w}{    }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rax}
+\PYG{+w}{    }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rdi}
+\PYG{+w}{    }\PYG{n+nf}{lea}\PYG{+w}{ }\PYG{n+no}{input\PYGZus{}char}\PYG{p}{(}\PYG{n+nv}{\PYGZpc{}rip}\PYG{p}{),}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rsi}
+\PYG{+w}{    }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}1}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rdx}
+\PYG{+w}{    }\PYG{n+nf}{syscall}
+
+\PYG{+w}{    }\PYG{n+nf}{mov}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}60}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rax}
+\PYG{+w}{    }\PYG{n+nf}{xor}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rdi}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nv}{\PYGZpc{}rdi}
+\PYG{+w}{    }\PYG{n+nf}{syscall}
+\end{MintedVerbatim}

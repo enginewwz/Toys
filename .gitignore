@@ -9,6 +9,10 @@ build/
 !/icx_acc.sh
 
 # reports
-**/report.md
+report/
+reports/
+*.md
+*.tex
+*.pdf
 
 knight_s_tour/verify_tour.c

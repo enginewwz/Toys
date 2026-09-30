@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+x87 long double size(byte) \PYGZam{} actual used size(bit)
+long double:    16
+mantissa:       64
+exponent:       15
+list sizeof structs(byte)
+struct1:        48
+struct2:        64
+struct3:        80
+\end{MintedVerbatim}

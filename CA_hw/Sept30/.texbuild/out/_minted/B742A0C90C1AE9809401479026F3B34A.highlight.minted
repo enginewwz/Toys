@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+as\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }build/input\PYGZhy{}output.o\PYG{+w}{ }input\PYGZhy{}output.s
+ld\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }build/input\PYGZhy{}output\PYG{+w}{ }build/input\PYGZhy{}output.o
+\end{MintedVerbatim}

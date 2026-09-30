@@ -1,0 +1,19 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nl}{.L8:}\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} 外层循环体}
+\PYG{+w}{    }\PYG{n+nf}{st.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r22}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{24}\PYG{+w}{        }\PYG{c+c1}{\PYGZsh{} j = 0}
+\PYG{+w}{    }\PYG{n+nf}{b}\PYG{+w}{   }\PYG{n+no}{.L5}
+\PYG{n+nl}{.L7:}\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} 内层循环}
+\PYG{+w}{    }\PYG{n+na}{...}\PYG{+w}{             }\PYG{c+c1}{\PYGZsh{} 43 条指令}
+\PYG{n+nl}{.L6:}
+\PYG{+w}{    }\PYG{n+nf}{ld.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r22}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{24}
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{1}
+\PYG{+w}{    }\PYG{n+nf}{st.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r22}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{24}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} j ++（也要访存）}
+\PYG{n+nl}{.L5:}\PYG{+w}{                    }\PYG{c+c1}{\PYGZsh{} 循环条件 j \PYGZlt{} 99 \PYGZhy{} i}
+\PYG{+w}{    }\PYG{n+nf}{addi.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r0}\PYG{p}{,}\PYG{l+m+mi}{99}\PYG{+w}{     }\PYG{c+c1}{\PYGZsh{} 0x63}
+\PYG{+w}{    }\PYG{n+nf}{ld.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r22}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{28}
+\PYG{+w}{    }\PYG{n+nf}{sub.w}\PYG{+w}{   }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}
+\PYG{+w}{    }\PYG{n+nf}{slli.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{0}
+\PYG{+w}{    }\PYG{n+nf}{ld.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r22}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{24}
+\PYG{+w}{    }\PYG{n+nf}{slli.w}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{l+m+mi}{0}
+\PYG{+w}{    }\PYG{n+nf}{blt}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r12}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r13}\PYG{p}{,.}\PYG{n+no}{L7}\PYG{+w}{       }\PYG{c+c1}{\PYGZsh{} 内层循环}
+\end{MintedVerbatim}

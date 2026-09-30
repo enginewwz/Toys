@@ -1,0 +1,50 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZsh{}}\PYG{+w}{ }\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdio.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}}\PYG{+w}{ }\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}float.h\PYGZgt{}}
+\PYG{c+cp}{\PYGZsh{}}\PYG{+w}{ }\PYG{c+cp}{include}\PYG{+w}{ }\PYG{c+cpf}{\PYGZlt{}stdlib.h\PYGZgt{}}
+
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{struct1}\PYG{+w}{      }\PYG{c+c1}{// shortest}
+\PYG{p}{\PYGZob{}}\PYG{+w}{                   }\PYG{c+c1}{// offset(byte)}
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// 0}
+\PYG{+w}{    }\PYG{k+kt}{short}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{// 2}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}\PYG{+w}{          }\PYG{c+c1}{// 4}
+\PYG{+w}{    }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// 8}
+\PYG{+w}{    }\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{// 16}
+\PYG{+w}{    }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{;}\PYG{+w}{       }\PYG{c+c1}{// 24}
+\PYG{+w}{    }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{;}\PYG{+w}{  }\PYG{c+c1}{// 32   \PYGZlt{}\PYGZhy{} x86\PYGZus{}64 (Linux/GCC) 下 10 字节，但是视作 16 字节做 16 字节对齐}
+\PYG{p}{\PYGZcb{};}\PYG{+w}{                  }\PYG{c+c1}{// total: 48}
+
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{struct2}
+\PYG{p}{\PYGZob{}}\PYG{+w}{                   }\PYG{c+c1}{// offset(byte)}
+\PYG{+w}{    }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{;}\PYG{+w}{       }\PYG{c+c1}{// 0}
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// 8}
+\PYG{+w}{    }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{;}\PYG{+w}{  }\PYG{c+c1}{// 16}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}\PYG{+w}{          }\PYG{c+c1}{// 32}
+\PYG{+w}{    }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// 40}
+\PYG{+w}{    }\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{// 44}
+\PYG{+w}{    }\PYG{k+kt}{short}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{// 48}
+\PYG{p}{\PYGZcb{};}\PYG{+w}{                  }\PYG{c+c1}{// total: 64}
+
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{struct3}
+\PYG{p}{\PYGZob{}}\PYG{+w}{                   }\PYG{c+c1}{// offset(byte)}
+\PYG{+w}{    }\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// 0}
+\PYG{+w}{    }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{;}\PYG{+w}{  }\PYG{c+c1}{// 16}
+\PYG{+w}{    }\PYG{k+kt}{short}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{// 32}
+\PYG{+w}{    }\PYG{k+kt}{double}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{;}\PYG{+w}{       }\PYG{c+c1}{// 40}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{;}\PYG{+w}{          }\PYG{c+c1}{// 48}
+\PYG{+w}{    }\PYG{k+kt}{long}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{;}\PYG{+w}{         }\PYG{c+c1}{// 56}
+\PYG{+w}{    }\PYG{k+kt}{float}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{;}\PYG{+w}{        }\PYG{c+c1}{// 64}
+\PYG{p}{\PYGZcb{};}\PYG{+w}{                  }\PYG{c+c1}{// total: 80}
+
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{main}\PYG{p}{()}
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}x87 long double size(byte) \PYGZam{} actual used size(bit)}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}long double:    \PYGZpc{}lu}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{k+kt}{long}\PYG{+w}{ }\PYG{k+kt}{double}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}mantissa:       \PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{LDBL\PYGZus{}MANT\PYGZus{}DIG}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}exponent:       \PYGZpc{}d}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}builtin\PYGZus{}clz}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{\PYGZus{}\PYGZus{}builtin\PYGZus{}clz}\PYG{p}{(}\PYG{n}{\PYGZus{}\PYGZus{}LDBL\PYGZus{}MAX\PYGZus{}EXP\PYGZus{}\PYGZus{}}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}list sizeof structs(byte)}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}struct1:        \PYGZpc{}lu}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{struct1}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}struct2:        \PYGZpc{}lu}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{struct2}\PYG{p}{));}
+\PYG{+w}{    }\PYG{n}{printf}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}struct3:        \PYGZpc{}lu}\PYG{l+s+se}{\PYGZbs{}n}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{sizeof}\PYG{p}{(}\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{struct3}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

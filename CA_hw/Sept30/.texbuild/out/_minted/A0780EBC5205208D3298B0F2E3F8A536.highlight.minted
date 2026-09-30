@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{+w}{    }\PYG{n+na}{.align}\PYG{+w}{  }\PYG{l+m+mi}{3}\PYG{+w}{               }\PYG{c+c1}{\PYGZsh{} 添加了低 8 位对齐}
+\PYG{n+nl}{.L2:}
+\PYG{+w}{    }\PYG{n+nf}{bl}\PYG{+w}{  }\PYG{n+nv}{\PYGZpc{}plt}\PYG{p}{(}\PYG{n+no}{rand}\PYG{p}{)}
+\PYG{+w}{    }\PYG{n+nf}{addi.d}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{l+m+mi}{4}
+\PYG{+w}{    }\PYG{n+nf}{mod.w}\PYG{+w}{   }\PYG{n+no}{\PYGZdl{}r4}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r4}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r24}
+\PYG{+w}{    }\PYG{n+nf}{st.w}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r4}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{+w}{         }\PYG{c+c1}{\PYGZsh{} 小 trick，有时能省指令，不过这里没省}
+\PYG{+w}{    }\PYG{n+nf}{bne}\PYG{+w}{ }\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r26}\PYG{p}{,.}\PYG{n+no}{L2}
+\end{MintedVerbatim}

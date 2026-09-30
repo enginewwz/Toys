@@ -1,0 +1,4 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+loongarch64\PYGZhy{}linux\PYGZhy{}gnu\PYGZhy{}gcc\PYGZhy{}14\PYG{+w}{ }\PYGZhy{}O0\PYG{+w}{ }\PYGZhy{}o\PYG{+w}{ }build/bubble\PYGZus{}sort\PYGZus{}loongarch64\PYGZus{}O0.s\PYG{+w}{ }\PYGZhy{}S\PYG{+w}{ }bubble\PYGZus{}sort.c\PYG{+w}{ }\PYG{l+s+se}{\PYGZbs{}}
+\PYG{+w}{    }\PYGZhy{}fno\PYGZhy{}asynchronous\PYGZhy{}unwind\PYGZhy{}tables\PYG{+w}{ }\PYGZhy{}fno\PYGZhy{}dwarf2\PYGZhy{}cfi\PYGZhy{}asm\PYG{+w}{ }\PYGZhy{}fno\PYGZhy{}verbose\PYGZhy{}asm
+\end{MintedVerbatim}

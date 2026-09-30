@@ -1,0 +1,9 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n+nl}{main:}
+\PYG{+w}{    }\PYG{n+nf}{addi.d}\PYG{+w}{  }\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,\PYGZhy{}}\PYG{l+m+mi}{48}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r1}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{40}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r23}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{32}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r24}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{24}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r25}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{16}
+\PYG{+w}{    }\PYG{n+nf}{st.d}\PYG{+w}{    }\PYG{n+no}{\PYGZdl{}r26}\PYG{p}{,}\PYG{n+no}{\PYGZdl{}r3}\PYG{p}{,}\PYG{l+m+mi}{8}
+\end{MintedVerbatim}
